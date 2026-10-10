@@ -15,7 +15,6 @@ import copy
 import json
 import os
 import tempfile
-import time
 from pathlib import Path
 from rich.console import Console
 from rich.panel import Panel
@@ -27,7 +26,7 @@ from wipeproof.core.verifier import PostWipeVerifier
 from wipeproof.crypto.keys import KeyManager
 from wipeproof.crypto.notary import CertificateNotary
 from wipeproof.crypto.pdf_cert import CertificatePdfGenerator
-from wipeproof.verifier.verifier_engine import CertificateVerifier, VerificationStatus
+from wipeproof.verifier.verifier_engine import CertificateVerifier
 
 console = Console()
 
@@ -76,7 +75,7 @@ def run_demo():
         console.print(f"  Standard Level:        [green]{wipe_result.level.value}[/green] ({wipe_result.standard_reference})")
         console.print(f"  Post-Wipe Entropy:     [bold green]{wipe_result.verification.shannon_entropy:.6f} bits/byte[/bold green]")
         console.print(f"  Zero-Fill Ratio:       [bold green]{wipe_result.verification.zero_fill_ratio * 100:.4f}%[/bold green]")
-        console.print(f"  Partition Table:       [green]MBR & GPT Boundaries Zero-Probed[/green]")
+        console.print("  Partition Table:       [green]MBR & GPT Boundaries Zero-Probed[/green]")
         console.print(f"  Execution Log SHA-256: [dim]{wipe_result.audit_log_sha256[:32]}...[/dim]")
 
         # ---------------------------------------------------------------------

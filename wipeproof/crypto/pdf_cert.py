@@ -10,9 +10,8 @@ Generates an executive-ready, tamper-evident PDF certificate with:
 
 from __future__ import annotations
 import io
-import os
 from pathlib import Path
-from typing import Any, Optional
+from typing import Any
 
 import qrcode
 from reportlab.lib import colors
@@ -26,7 +25,6 @@ from reportlab.platypus import (
     Table,
     TableStyle,
     Image,
-    KeepTogether,
 )
 
 

@@ -4,7 +4,7 @@ Tests end-to-end flow: Discovery -> Safety -> Wipe -> Verification -> Audit Hash
 """
 
 from pathlib import Path
-from wipeproof.core.models import SanitizationMethod, SanitizationLevel
+from wipeproof.core.models import SanitizationMethod
 from wipeproof.core.orchestrator import SanitizationOrchestrator
 
 

@@ -10,10 +10,8 @@ Enforces defense-in-depth safety invariants:
 
 from __future__ import annotations
 import os
-import re
-import sys
 from pathlib import Path
-from typing import Optional, Set
+from typing import Optional
 
 from wipeproof.core.exceptions import SafetyViolationError
 from wipeproof.core.models import DeviceProfile, MediaType

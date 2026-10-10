@@ -17,10 +17,9 @@ from pathlib import Path
 
 from wipeproof import __version__
 from wipeproof.core.discovery import DeviceDiscovery
-from wipeproof.core.exceptions import WipeProofError, SafetyViolationError
-from wipeproof.core.models import MediaType, SanitizationMethod
+from wipeproof.core.exceptions import WipeProofError
+from wipeproof.core.models import SanitizationMethod
 from wipeproof.core.orchestrator import SanitizationOrchestrator
-from wipeproof.core.safety import SafetyGatekeeper
 from wipeproof.crypto.keys import KeyManager, RevocationRegistry
 from wipeproof.crypto.notary import CertificateNotary
 from wipeproof.crypto.pdf_cert import CertificatePdfGenerator
