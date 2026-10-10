@@ -183,7 +183,7 @@ class CertificateVerifier:
         try:
             sig_bytes = bytes.fromhex(sig_hex)
             pub_key.verify(sig_bytes, canonical_bytes)
-        except (InvalidSignature, ValueError) as e:
+        except (InvalidSignature, ValueError):
             return VerificationReport(
                 status=VerificationStatus.INVALID,
                 reason="CRYPTOGRAPHIC SIGNATURE VERIFICATION FAILED: Signature is invalid for provided public key.",

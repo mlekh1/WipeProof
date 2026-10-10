@@ -7,7 +7,6 @@ and append-only Merkle transparency log inclusion.
 
 import os
 import tempfile
-from pathlib import Path
 from typing import Any, Optional
 from fastapi import FastAPI, HTTPException, status
 from fastapi.responses import HTMLResponse

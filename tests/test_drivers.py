@@ -7,7 +7,6 @@ Validates:
 - SimulationDriver execution and error injection
 """
 
-import os
 from pathlib import Path
 import pytest
 
@@ -16,7 +15,6 @@ from wipeproof.core.drivers.simulation import SimulationDriver
 from wipeproof.core.exceptions import VerificationFailedError
 from wipeproof.core.models import (
     DeviceProfile,
-    MediaType,
     SanitizationLevel,
     SanitizationMethod,
 )

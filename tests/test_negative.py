@@ -12,14 +12,12 @@ Rigorously evaluates adversarial tampering scenarios:
 """
 
 import copy
-import json
 import tempfile
 from pathlib import Path
 import pytest
 
 from wipeproof.core.models import (
     DeviceProfile,
-    HpaDcoState,
     MediaType,
     SanitizationLevel,
     SanitizationMethod,
