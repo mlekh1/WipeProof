@@ -10,13 +10,9 @@ Validates:
 """
 
 import hashlib
-import json
-import os
 import tempfile
 from pathlib import Path
-import pytest
 from hypothesis import given, strategies as st
-from cryptography.hazmat.primitives.asymmetric import ed25519
 
 from wipeproof.core.models import (
     DeviceProfile,
@@ -87,7 +83,7 @@ def test_key_manager_lifecycle():
         assert priv_path.exists()
         assert pub_path.exists()
 
-        loaded_priv = KeyManager.load_private_key(priv_path, password="secretpassword")
+        KeyManager.load_private_key(priv_path, password="secretpassword")
         loaded_pub = KeyManager.load_public_key(pub_path)
 
         assert KeyManager.get_key_id(loaded_pub) == key_id

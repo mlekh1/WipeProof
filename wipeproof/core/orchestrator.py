@@ -27,7 +27,6 @@ from wipeproof.core.hpa_dco import HpaDcoAuditor
 from wipeproof.core.models import (
     DeviceProfile,
     MediaType,
-    SanitizationLevel,
     SanitizationMethod,
     WipeResult,
 )

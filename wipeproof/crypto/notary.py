@@ -8,7 +8,6 @@ signs canonical payloads using RFC 8032 Ed25519, and manages cryptographic hash 
 from __future__ import annotations
 import hashlib
 import json
-import os
 import platform
 import subprocess
 from datetime import datetime, timezone
@@ -126,7 +125,9 @@ class CertificateNotary:
         if self.chain_state_file.exists():
             try:
                 data = json.loads(self.chain_state_file.read_text(encoding="utf-8"))
-                return data.get("latest_certificate_hash", GENESIS_HASH)
+                latest_hash = data.get("latest_certificate_hash", GENESIS_HASH)
+                if isinstance(latest_hash, str):
+                    return latest_hash
             except Exception:
                 pass
         return GENESIS_HASH
